@@ -1,0 +1,26 @@
+# Dependencies
+node_modules/
+
+# Next.js
+.next/
+out/
+
+# Build artifacts
+tsconfig.tsbuildinfo
+
+# Debug
+*.log
+
+# OS
+.DS_Store
+
+# Test artifacts
+.playwright-mcp/
+mobile-full.png
+mobile-viewport.png
+
+# Env
+.env
+.env.local
+.env*.local
+docs/

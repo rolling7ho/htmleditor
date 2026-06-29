@@ -1,0 +1,193 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #ffffff;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  color: #111111;
+  min-height: 100vh;
+}
+
+button { font-family: inherit; }
+select { font-family: inherit; }
+
+/* ── Editor content styles ──────────────────────────────────────────────── */
+
+[contenteditable] blockquote {
+  border-left: 3px solid #d0d0d0;
+  margin: 8px 0;
+  padding: 4px 18px;
+  color: #555;
+  font-style: italic;
+}
+
+[contenteditable] pre {
+  background: #f5f5f5;
+  padding: 16px 20px;
+  border-radius: 5px;
+  font-family: "Fira Code", "Courier New", Courier, monospace;
+  font-size: 13px;
+  line-height: 1.6;
+  overflow-x: auto;
+  margin: 8px 0;
+  white-space: pre-wrap;
+  color: #c7254e;
+}
+
+[contenteditable] code {
+  background: #f0f0f0;
+  padding: 2px 5px;
+  border-radius: 3px;
+  font-family: "Fira Code", "Courier New", Courier, monospace;
+  font-size: 0.88em;
+  color: #c7254e;
+}
+
+[contenteditable] pre code {
+  background: none;
+  padding: 0;
+  font-size: inherit;
+  color: inherit;
+}
+
+[contenteditable] mark {
+  background: #ffe066;
+  color: inherit;
+  border-radius: 2px;
+  padding: 0 1px;
+}
+
+[contenteditable] del {
+  color: #888;
+}
+
+[contenteditable] hr {
+  border: none;
+  border-top: 2px solid #e8e8e8;
+  margin: 20px 0;
+  cursor: default;
+}
+
+/* ── Table ──────────────────────────────────────────────────────────────── */
+
+[contenteditable] table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 12px 0;
+  font-size: 0.95em;
+}
+
+[contenteditable] th,
+[contenteditable] td {
+  border: 1px solid #d4d4d4;
+  padding: 8px 12px;
+  text-align: left;
+  min-width: 80px;
+  vertical-align: top;
+}
+
+[contenteditable] th {
+  background: #f5f5f5;
+  font-weight: 600;
+  font-size: 0.9em;
+  letter-spacing: 0.02em;
+}
+
+[contenteditable] tr:nth-child(even) td {
+  background: #fafafa;
+}
+
+/* ── Post body (mirrors editor content styles) ───────────────────────────── */
+
+.post-content blockquote  { border-left: 3px solid #d0d0d0; margin: 8px 0; padding: 4px 18px; color: #555; font-style: italic; }
+.post-content pre         { background: #f5f5f5; padding: 16px 20px; border-radius: 5px; font-family: "Fira Code","Courier New",Courier,monospace; font-size: 13px; line-height: 1.6; overflow-x: auto; margin: 8px 0; white-space: pre-wrap; color: #c7254e; }
+.post-content code        { background: #f0f0f0; padding: 2px 5px; border-radius: 3px; font-family: "Fira Code","Courier New",Courier,monospace; font-size: 0.88em; color: #c7254e; }
+.post-content pre code    { background: none; padding: 0; font-size: inherit; color: inherit; }
+.post-content mark        { background: #ffe066; color: inherit; border-radius: 2px; padding: 0 1px; }
+.post-content del         { color: #888; }
+.post-content hr          { border: none; border-top: 2px solid #e8e8e8; margin: 20px 0; }
+.post-content table       { border-collapse: collapse; width: 100%; margin: 12px 0; font-size: 0.95em; }
+.post-content th,
+.post-content td          { border: 1px solid #d4d4d4; padding: 8px 12px; text-align: left; }
+.post-content th          { background: #f5f5f5; font-weight: 600; font-size: 0.9em; }
+.post-content h1          { font-size: 1.8em; font-weight: 600; margin: 12px 0 6px; }
+.post-content h2          { font-size: 1.4em; font-weight: 600; margin: 10px 0 5px; }
+.post-content h3          { font-size: 1.15em; font-weight: 600; margin: 8px 0 4px; }
+.post-content h4          { font-size: 1em; font-weight: 600; margin: 6px 0 3px; }
+.post-content p           { margin: 0 0 8px; }
+.post-content ul,
+.post-content ol          { padding-left: 24px; margin: 6px 0; }
+
+/* ── Touch UX ───────────────────────────────────────────────────────────── */
+
+button, [role="button"], select, input {
+  touch-action: manipulation;
+}
+
+/* ── Mobile responsive ───────────────────────────────────────────────────── */
+
+@media (max-width: 640px) {
+  .editor-header { padding: 14px 16px !important; }
+
+  .editor-main { padding: 16px 0 24px !important; }
+
+  .editor-card {
+    border-radius: 0 !important;
+    border-left: none !important;
+    border-right: none !important;
+    box-shadow: none !important;
+  }
+
+  .editor-toolbar {
+    gap: 2px !important;
+    row-gap: 4px !important;
+    padding: 6px 8px !important;
+  }
+
+  .editor-toolbar select {
+    max-width: 110px !important;
+    font-size: 11px !important;
+  }
+
+  .editor-area {
+    padding: 20px 16px !important;
+    min-height: 280px !important;
+  }
+
+  .post-row {
+    flex-wrap: wrap !important;
+    gap: 8px !important;
+    padding: 10px 12px 14px !important;
+  }
+
+  .hints-section { display: none !important; }
+
+  .post-feed {
+    margin-top: 24px !important;
+    padding: 0 12px !important;
+    box-sizing: border-box !important;
+  }
+
+  .post-meta { padding: 10px 14px !important; }
+
+  .post-title { max-width: calc(100vw - 150px) !important; }
+
+  .post-body { padding: 16px 14px !important; }
+
+  .post-content table { display: block; overflow-x: auto; }
+}
+
+/* ── Placeholder ────────────────────────────────────────────────────────── */
+
+/* data-empty is toggled by JS because :empty doesn't match after Chromium
+   leaves a <br> child when the user clears the editor. */
+[contenteditable][data-empty]:not(:focus):before {
+  content: attr(data-placeholder);
+  color: #bbb;
+  pointer-events: none;
+  display: block;
+}
